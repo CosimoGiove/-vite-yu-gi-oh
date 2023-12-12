@@ -9,7 +9,7 @@ export default {
         }
     }, 
     created(){
-        axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0")
+        axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=30&offset=0")
         .then((data)=>{
           this.cards = data.data.data
         })
@@ -19,7 +19,7 @@ export default {
 <template>
     <div class="contenitorecard">
         <div class="cardtrovate">
-            Found 39 card
+            Found {{ cards.length }} card
         </div>
         <div>
             <ul>
