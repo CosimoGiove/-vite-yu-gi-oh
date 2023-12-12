@@ -17,8 +17,8 @@ export default {
         <div>
             <ul>
                 <li v-for="card in store.cards" class="nomecard">
-                    <img :src="card.card_images[0].image_url" alt="">
-                    <div> {{ card.name }}</div>
+                    <img :src="card.card_images[0].image_url" :alt="card.name">
+                    <div class="margincard"> {{ card.name }}</div>
                     <div class="tipologia">{{ card.archetype }}</div>
                 </li>
             </ul>
@@ -69,5 +69,8 @@ export default {
         color: black;
         margin-top: 20px;
         padding-bottom: 20px;
+    }
+    .margincard{
+        margin-top: 20px;
     }
 }</style>
