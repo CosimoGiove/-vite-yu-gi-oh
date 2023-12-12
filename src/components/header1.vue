@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: "header",
+    name: "header1",
     data() {
         return {
             url: "https://vignette1.wikia.nocookie.net/yugiohenespanol/images/a/aa/Yugioh_anime_logo.jpg/revision/latest?cb=20130310042737&path-prefix=es"
