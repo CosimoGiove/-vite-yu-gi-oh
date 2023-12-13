@@ -8,12 +8,14 @@ export default {
         card,
     },
     data() {
+        return {}
     }
 }
 </script>
 <template>
     <main>
-        <select1></select1>
+        <!-- <select1 @tipo="$emit='tipo'"></select1> -->
+        <select1 @tipo="$emit('tipo')"></select1>
         <card></card>
     </main>
    

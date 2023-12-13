@@ -3,7 +3,7 @@ export default {
     name: "header1",
     data() {
         return {
-            url: "https://vignette1.wikia.nocookie.net/yugiohenespanol/images/a/aa/Yugioh_anime_logo.jpg/revision/latest?cb=20130310042737&path-prefix=es"
+            url: "https://vignette1.wikia.nocookie.net/yugiohenespanol/images/a/aa/Yugioh_anime_logo.jpg/revision/latest?cb=20130310042737&path-prefix=es",
         }
     }
 }
@@ -12,7 +12,6 @@ export default {
     <header>
         <div><img :src="url" alt="logo"></div>
         <h1>Yu-Gi-Oh Api</h1>
-
     </header>
 </template>
 <style lang="scss" scoped>

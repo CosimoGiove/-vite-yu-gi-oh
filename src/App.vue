@@ -6,7 +6,10 @@ import main1 from './components/main1.vue';
 export default {
   data() {
     return {
-      loading: true
+      loading: true,
+      store,
+      tipo:"https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype="
+
     }
   },
   components: {
@@ -21,11 +24,10 @@ export default {
   },
   methods: {
     fetchData() {
-      // Replace with your API call
+      // if per la creazione dell'URL di chiamata API (this.store.tipologia)
       fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=500&offset=0")
         .then((response) => response.json())
         .then((data) => {
-          // Handle your data here
           this.loading = false;
         })
         .catch((error) => {
@@ -33,7 +35,23 @@ export default {
           this.loading = false;
         });
     },
+    test() {
+      console.log(this.store.tipologia);
+      if(this.store.tipologia = ""){
+        axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=500&offset=0")
+      .then((data) => {
+        store.cards = data.data.data
+      })
+      }else{
+        axios.get(this.tipo + this.store.tipologia)
+      .then((data) => {
+        store.cards = data.data.data
+      })
+    
+    }
   },
+  },
+   
   mounted() {
     this.fetchData();
   },
@@ -48,7 +66,7 @@ export default {
     </div>
     <div class="content" v-if="!loading">
       <header1></header1>
-      <main1></main1>
+      <main1 @tipo="test"></main1>
     </div>
   </div>
 </template>
