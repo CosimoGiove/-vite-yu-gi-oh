@@ -37,7 +37,7 @@ export default {
     },
     test() {
       console.log(this.store.tipologia);
-      if(this.store.tipologia = ""){
+      if(this.store.tipologia === ""){
         axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=500&offset=0")
       .then((data) => {
         store.cards = data.data.data
